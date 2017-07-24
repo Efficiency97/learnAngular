@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginModule">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <script src="../angular.min.js"></script>
+    <script src="common.js"></script>
+</head>
+<body>
+<h1>登陆页面</h1>
+<div ng-controller="UserController">
+    <div>姓名：<input type="text" ng-model="uname" ></div>
+    <div>密码：<input type="text" ng-model="pword"></div>
+    <div><input type="submit" ng-click="submit()"></div>
+</div>
+</body>
+</html>
