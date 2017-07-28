@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="msgMoudle">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="MsgController">
+    <button ng-click="scheduleTtask()">3秒后回显消息</button>
+    <div>{{message}}</div>
+</div>
+<script>
+	var msgMoudle=angular.module('msgMoudle',[]);
+//	需要先在此处传入$timeout参数
+	msgMoudle.controller('MsgController',function ($scope,$timeout) {
+		$scope.scheduleTtask=function () {
+			$timeout(function () {
+					$scope.message='信息内容';
+					console.log('messeage='+$scope.message);
+			},3000)
+		}
+	})
+</script>
+</body>
+</html>

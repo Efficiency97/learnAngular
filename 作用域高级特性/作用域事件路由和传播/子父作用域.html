@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../angular.min.js"></script>
+    <style>
+        .parent{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="parent" ng-controller="ParentCon">
+    <button ng-click="postEvent()"></button>
+    <div class="child" ng-controller="ChildCon">
+    </div>
+</div>
+<script>
+	var app=angular.module('eventModule',[]);
+	app.controller('ParentCon',function ($scope) {
+		$scope.postEvent=function () {
+			$scope.$broadcast('infoEvent',{name:'Jane',age:23})
+		};
+
+	});
+	app.controller('ChildCon',function ($scope) {
+
+	})
+</script>
+</body>
+</html>
